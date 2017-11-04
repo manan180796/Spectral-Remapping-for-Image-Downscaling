@@ -1,6 +1,6 @@
 function [Result] = createWaveImage(wave,imageSize)
 if(wave(2)<0)
-    wave(2)=wave(3)+1;
+    wave(2)=wave(2)+1;
 end
 if(wave(3)<0)
     wave(3)=wave(3)+1;
