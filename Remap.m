@@ -17,8 +17,9 @@ for i = 1:imageSize(1)
             wave(2:3) = wave(2:3)/magnitude;
             newCoeff = 0.4/R;
             wave(2:3) = wave(2:3)*newCoeff;
-            reMappedWavesMap{i,j,k} = wave;
+            waves(k,:) = wave;
         end
+        reMappedWavesMap{i,j} = waves;
     end
 end
 end

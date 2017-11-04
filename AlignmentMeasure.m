@@ -20,6 +20,10 @@ del = del.^2;
 del = sum(sum(del));
 del = sqrt(del);
 del = del/min(W1(1),W2(1));
-result = exp(-((del*del)/(lambda*lambda)));
+if (del>3*lambda)
+    result  =0;
+else
+    result = exp(-((del*del)/(lambda*lambda)));
+end
 end
 

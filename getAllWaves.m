@@ -4,7 +4,7 @@ function [ allWaves ] = getAllWaves( image,R,windowFilter )
 allWaves = cell(size(image,1),size(image,2));
 for i = 1:size(image,1)
     for j = 1:size(image,2)
-%         [i,j]
+        [i,j]
         allWaves(i,j) = {GetWaves(image,circshift(windowFilter,[i,j]-1),R)};
     end
 end

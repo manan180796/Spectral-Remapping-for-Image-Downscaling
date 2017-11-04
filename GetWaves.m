@@ -15,7 +15,7 @@ while size(waves)<10
     maxLocation = maxLocation-1;
     a = maxLocation(2);
     b = maxLocation(1);
-    alphaDash = getAlphaDash(fftFilter,b,a,log(abs(fftImage(maxLocation(2)+1,maxLocation(1)+1))));
+    alphaDash = getAlphaDash(fftFilter,b,a,log(abs(fftImage(b+1,a+1))));
     maxAlpha = max(maxAlpha,alphaDash);
     if alphaDash<maxAlpha/4
         break;
@@ -48,6 +48,12 @@ while size(waves)<10
         break;
     end
     currentMag = Mag;
+    if(wave(2)>0.5)
+        wave(2) = wave(2)-1;
+    end
+    if(wave(3)>0.5)
+        wave(3) = wave(3)-1;
+    end
     waves = [waves;wave];
     
     

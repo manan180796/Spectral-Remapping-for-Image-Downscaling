@@ -7,10 +7,10 @@ Fil=Filter.*Filter;
 % Fil = Filter;
 for m=1:imageSize(1)
     for n=1:imageSize(2)
-        A=waves(m,n);
+        A=waves{m,n};
         tempRes = zeros(imageSize);
-        for k=1:size(A)
-            B=A{1};
+        for k=1:size(A,1)
+            B=A(k,:)';
             [Result] = createWaveImage(B,imageSize);
 %             result(1,1)
             %FIl=FIlter(((x-m):(x-m+Size(1)))((y-n):(y-n+Size(2))));
